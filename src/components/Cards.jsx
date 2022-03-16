@@ -1,6 +1,6 @@
 import { wilder } from "../api/requests";
 import { useQuery } from "react-query";
-import Skills from "./Skills.jsx";
+import NewCard from "./NewCard";
 
 export default function Cards() {
   const { isLoading, error, data } = useQuery("wilders", () => wilder.getAll());
@@ -16,30 +16,7 @@ export default function Cards() {
   return (
     <div className="grid grid-cols-3 gap-2">
       {data?.result.map((user) => {
-        return (
-          <div className="border-8 border-gray-200  text-center">
-          <>
-         
-
-            <img key={user._id}
-              src="https://source.unsplash.com/600x400/?people"
-              alt=""
-              width="600"
-              className=""
-            />
-
-            <h2>{user.name}</h2>
-            <p>{user.city}</p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              alias provident soluta accusamus, veritatis sint libero fugiat,
-              corporis asperiores minima reiciendis vel recusandae similique
-              harum pariatur, aliquam aliquid porro quos.
-            </p>
-            <Skills data={user.skills} />
-          </>
-    </div>
-        );
+        return <NewCard user={user} key={user._id} />;
       })}
     </div>
   );

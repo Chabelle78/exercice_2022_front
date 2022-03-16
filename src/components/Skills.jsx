@@ -1,5 +1,4 @@
 export default function Skills({ data }) {
-  console.log(data);
 
   return (
     <div>

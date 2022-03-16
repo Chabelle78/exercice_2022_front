@@ -11,7 +11,14 @@ export const wilder = {
         city: newUser.city,
       })
       .then((res) => res.data),
+  getOne: (id) => axios.get(`${API_URL}/wilder/${id}`).then((res) => res.data),
+  update: (id, update) =>
+    axios
+      .put(`${API_URL}/wilder/update/${id}`, {
+        name: update.name,
+        city: update.city,
+      })
+      .then((res) => res.data),
+  delete: (id) =>
+    axios.delete(`${API_URL}/wilder/delete/${id}`).then((res) => res.data),
 };
-
-console.log(wilder.getAll());
-export const bernard = axios.get(`${API_URL}/wilders`);
