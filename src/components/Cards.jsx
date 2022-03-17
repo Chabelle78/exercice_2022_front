@@ -14,7 +14,7 @@ export default function Cards() {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-2">
+    <div className="w-1/2 mx-96 grid grid-cols-3 gap-2">
       {data?.result.map((user) => {
         return <NewCard user={user} key={user._id} />;
       })}

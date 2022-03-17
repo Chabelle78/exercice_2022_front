@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", /* Vous évitera l'erreur : React' refers to a UMD global, but the current file is a module. Consider adding an import instead.*/
+    "target": "es2016", /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "module": "commonjs", /* Specify what module code is generated. */
+    "esModuleInterop": true, /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables `allowSyntheticDefaultImports` for type compatibility. */
+    "forceConsistentCasingInFileNames": true, /* Ensure that casing is correct in imports. */
+    "strict": false, /* Enable all strict type-checking options. */
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "rootDir": "./",
+    "moduleResolution": "node", /* le plus important permettant de faire la résolution de nom par exemple */
+    "allowJs": true,
+    "checkJs": true,
+    // "outDir": "./dist" /* Le dossier de sortie pour la compilation */
+  },
+  "include": [
+    "./**/*"
+  ], "exclude":["postcss.config.js"]
+}
