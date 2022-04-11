@@ -1,12 +1,14 @@
-export interface wilder {
+export interface Wilder {
+    result: any;
     _id: string;
     name: string;
     city: string;
     description?: string;
-    skills?: skill[];
+    skills?: Skill[];
   }
   
-  export interface skill {
+  export interface Skill {
     title: string;
     votes: number;
+    _id: string;
   }

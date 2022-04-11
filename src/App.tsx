@@ -5,8 +5,8 @@ import { QueryClientProvider } from "react-query";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import FormUser from "./components/FormUser";
-import Modify from "./components/Modify";
 import ErrorsPage from "./errorsPage/ErrorsPage";
+import OneWilder from "./components/OneWilder";
 
 //JSX
 // Hook use
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/create-wilder" element={<FormUser />} />
-            <Route path="/wilder/:id" element={<Modify />} />
+            <Route path="/wilder/:id" element={<OneWilder />} />
             <Route path="/errors" element={<ErrorsPage error={undefined} />} />
 
           </Routes>

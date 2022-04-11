@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { wilder } from "../api/requests";
 import Skills from "./Skills";
 
-export default function NewCard({ user }) {
+export default function NewCard({ user }) : JSX.Element{
   const handleClickDelete = () => {
     console.log("jai clique sur delete");
     wilder.delete(user._id);

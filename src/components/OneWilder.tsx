@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { wilder } from "../api/requests";
+import {Wilder} from "../types/index"
 
-export default function Modify() {
+export default function OneWilder(): JSX.Element {
   const { id } = useParams();
-  const [oneWilder, setOneWilder] = useState({});
+  const [oneWilder, setOneWilder] = useState<Wilder>();
   const [isLoading, setIsLoading] = useState("");
   const [isError, setIsError] = useState("");
 
@@ -13,18 +14,16 @@ export default function Modify() {
       const res = await wilder
         .getOne(id)
         .then((res) => {
-          setIsLoading();
           return res;
         })
         .catch((err) => setIsError(err));
-      setOneWilder(res.result[0]);
-    };
+        setOneWilder(res.result[0]);
+      };
     getOneWilder();
   }, []);
 
   if (isLoading) return <>Is loading...</>;
   if (isError) return <>Error</>;
-  console.log(oneWilder);
 
   return (
     <div>
@@ -33,10 +32,9 @@ export default function Modify() {
       {oneWilder.skills?.map((skill, index) => {
         return (
           <>
-          <div key={index}>
-
-            {skill.title} || {skill.votes}
-          </div>
+            <div key={index}>
+              {skill.title} || {skill.votes}
+            </div>
           </>
         );
       })}

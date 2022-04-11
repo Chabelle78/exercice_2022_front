@@ -1,8 +1,8 @@
 import CreateUserButton from "./CreateUserButton";
 import Cards from "./Cards";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "./SearchBar";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       <SearchBar />
